@@ -5,6 +5,7 @@ import Link from "next/link";
 import { WishlistContext } from "@/components/Context/WishlistContext";
 import { Button } from "@/components/ui/button";
 import AddToWishlist from "@/components/AddToWishlist/AddToWishlist";
+import { ProductI } from "@/interfaces";
 
 export default function Wishlist() {
   const { wishlistData, isLoading, setWishlistData } =
@@ -54,7 +55,7 @@ export default function Wishlist() {
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
-        {wishlistData.data.map((product) => (
+        {wishlistData.data.map(({product}:{product:ProductI}) => (
           <div
             key={product._id}
             className="bg-white shadow-md rounded-2xl p-4 flex flex-col hover:shadow-lg transition"

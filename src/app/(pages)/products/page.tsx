@@ -18,10 +18,10 @@ export default async function Products({
 }: {
   searchParams?: { category?: string };
 }) {
-  // ✅ نقرأ الـcategory من الـURL
+
   const categoryId = searchParams?.category;
 
-  // ✅ نعمل الفيتش بناءً على الـcategoryId
+
   const apiUrl = categoryId
     ? `https://ecommerce.routemisr.com/api/v1/products?category=${categoryId}`
     : `https://ecommerce.routemisr.com/api/v1/products`;
